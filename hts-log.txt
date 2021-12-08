@@ -1,0 +1,40 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 08 Dec 2021 19:23:18 at https://bscpad-sale.live/metavpad/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://bscpad-sale.live/metavpad/ -O1 "C:\bscpad-metavpad\Bscpad-metavpad" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+19:27:07	Warning: 	Retry after error -5 (Unable to get server's address: This is usually a temporary error during hostnam) at link https://bscpad.network/dapp/index_files/bootstrap.css (from https://bscpad-sale.live/metavpad/)
+19:27:12	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://bscpad.network/dapp/index_files/materialdesignicons.css (from https://bscpad-sale.live/metavpad/)
+19:27:57	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://bscpad.network/dapp/index_files/all.css (from https://bscpad-sale.live/metavpad/)
+19:28:02	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://bscpad.network/dapp/index_files/style.css (from https://bscpad-sale.live/metavpad/)
+19:28:11	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/images/1620986811_classify_img.png (from https://bscpad-sale.live/metavpad/)
+19:28:11	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/images/1620985054_page_img.png (from https://bscpad-sale.live/metavpad/)
+19:28:11	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/images/400x400-Hf9hEtumAEKfeuf2n0bpS1wfcOi0UHCIlFx.jpg (from https://bscpad-sale.live/metavpad/)
+19:28:14	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/images/1620988379_link_img.png (from https://bscpad-sale.live/metavpad/)
+19:28:16	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/images/1620988528_link_img.png (from https://bscpad-sale.live/metavpad/)
+19:28:18	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/js/jquery-3.5.1.min.js (from https://bscpad-sale.live/metavpad/)
+19:28:20	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/js/bootstrap.bundle.min.js (from https://bscpad-sale.live/metavpad/)
+19:28:23	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/js/script.js (from https://bscpad-sale.live/metavpad/)
+19:28:23	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/js/2.a7c72800.chunk.js (from https://bscpad-sale.live/metavpad/)
+19:28:26	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js (from https://bscpad-sale.live/metavpad/)
+19:28:28	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://bscpad.network/dapp/index_files/bootstrap.css (from https://bscpad-sale.live/metavpad/)
+19:28:40	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://bscpad.network/dapp/index_files/materialdesignicons.css (from https://bscpad-sale.live/metavpad/)
+19:28:44	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/fonts/fa-brands-400.svg (from https://bscpad-sale.live/metavpad/css/all.css)
+19:28:45	Warning: 	Retry after error -4 (Connect Error) at link https://bscpad-sale.live/metavpad/fonts/fa-duotone-900.svg (from https://bscpad-sale.live/metavpad/css/all.css)
+19:28:47	Warning: 	Warning: store application/octet-stream without scan: C:/bscpad-metavpad/Bscpad-metavpad/bscpad-sale.live/metavpad/fonts/fa-light-300.svg
+19:28:47	Warning: 	Warning: store application/octet-stream without scan: C:/bscpad-metavpad/Bscpad-metavpad/bscpad-sale.live/metavpad/fonts/fa-regular-400.svg
+19:28:47	Warning: 	Warning: store application/octet-stream without scan: C:/bscpad-metavpad/Bscpad-metavpad/bscpad-sale.live/metavpad/fonts/fa-solid-900.svg
+19:28:47	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://bscpad.network/dapp/index_files/all.css (from https://bscpad-sale.live/metavpad/)
+19:28:49	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://bscpad.network/dapp/index_files/style.css (from https://bscpad-sale.live/metavpad/)
+19:28:50	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://bscpad.network/dapp/index_files/bootstrap.css (from https://bscpad-sale.live/metavpad/)
+19:28:50	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://bscpad.network/dapp/index_files/materialdesignicons.css (from https://bscpad-sale.live/metavpad/)
+19:28:50	Warning: 	Warning: store application/octet-stream without scan: C:/bscpad-metavpad/Bscpad-metavpad/bscpad-sale.live/metavpad/fonts/fa-brands-400.svg
+19:28:50	Warning: 	Warning: store application/octet-stream without scan: C:/bscpad-metavpad/Bscpad-metavpad/bscpad-sale.live/metavpad/fonts/fa-duotone-900.svg
+19:28:50	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://bscpad.network/dapp/index_files/all.css (from https://bscpad-sale.live/metavpad/)
+19:28:50	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://bscpad.network/dapp/index_files/style.css (from https://bscpad-sale.live/metavpad/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 5 minutes 32 seconds : 64 links scanned, 39 files written (6575485 bytes overall) [3080079 bytes received at 9277 bytes/sec], 5441901 bytes transferred using HTTP compression in 22 files, ratio 35%, 1.7 requests per connection
+(4 errors, 25 warnings, 0 messages)

